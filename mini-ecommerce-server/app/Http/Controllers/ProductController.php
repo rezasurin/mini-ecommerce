@@ -13,6 +13,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->Product = new Product();
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
