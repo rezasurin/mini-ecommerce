@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -13,6 +14,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->User = new User();
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
@@ -38,11 +45,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->all();
+        $user = new User();
+        $user->name=$request->input('name');
+        $user->email=$request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $user->role = $request->input('role');
+        $user->save();
 
-        $user = User::create($input);
-
-        return new UserResource($user);
+        return $user;
     }
 
     /**
