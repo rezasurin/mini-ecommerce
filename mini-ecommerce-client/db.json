@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://cf.shopee.ph/file/765cdfb537d3a13116221c4f14cb6dbe",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 2,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://www.uniqlo.com/id/news/topics/2019061901/img/31T_190619hzMNvQ.jpg",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 3,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/424787/item/goods_00_424787.jpg?width=2000",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 4,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://cdn.trendhunterstatic.com/thumbs/uniqlo-ut-x-star-wars.jpeg",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 5,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://assets.moomin.com/uploads/2019/03/Little-My-Uniqlo-Moomin-960x960.jpg",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 6,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://www.freshnessmag.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTQ3ODk1NzkzNTc4MjIyNjk0/uniqlo-ut-one-piece-t-shirt-capsule-02.jpg",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 7,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "https://cf.shopee.co.id/file/bdb6e6534b0a9ff9039b086d1be9d508",
+      "stock": 12,
+      "sold": false
+    },
+    {
+      "id": 8,
+      "name": "Baju",
+      "price": 20000,
+      "imageUrl": "blablabla",
+      "stock": 12,
+      "sold": false
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "user seller",
+      "email": "seller@mail.com",
+      "password": "seller123",
+      "avatarUrl": "blablabla"
+    },
+    {
+      "id": 2,
+      "name": "user customer",
+      "email": "customer@mail.com",
+      "password": "customer123s",
+      "avatarUrl": "blablabla"
+    }
+  ]
+}
