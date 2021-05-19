@@ -9,6 +9,8 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 
+import LoginModal from '../components/LoginModal'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -65,11 +67,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function NavBar() {
+export default function NavBar({open, setOpen}) {
   const classes = useStyles();
   const handleClickLogin = () => {
-
+    setOpen(true)
   }
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -98,18 +101,17 @@ export default function NavBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <div style={{margin: 20}}>
+          <div >
             <Button variant="contained" color="danger" 
-            style={{ marginRight: 20}}
+            style={{ marginLeft: 20}}
+            onClick={() => handleClickLogin()}
             >
               Login
-            </Button>
-            <Button variant="contained" color="danger" >
-              Sign Up
             </Button>
           </div>
         </Toolbar>
       </AppBar>
+      <LoginModal isOpen={open} setOpen={setOpen}/>
     </div>
   );
 }

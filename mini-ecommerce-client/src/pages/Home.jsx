@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useSelector, useDispatch} from 'react-redux'
 import { GridList, Grid, GridListTile, Container, makeStyles,
   Paper, Typography,
@@ -6,7 +6,9 @@ import { GridList, Grid, GridListTile, Container, makeStyles,
 } from '@material-ui/core'
 import Category from '../components/Category'
 import ImageContainer from '../components/ImageContainer'
+import LoginModal from '../components/LoginModal'
 import fetchProducts from '../store/actions/products'
+import ShoppingIllustration from '../assets/online-shopping.svg'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,8 +17,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
     maxWidth: 400,
   },
-  paper: {
-    padding: theme.spacing(3, 2)
+  svgContainer: {
+    width: '300px',
+    height: '300px'
   },
   card: {
     maxWidth: 200,
@@ -27,15 +30,15 @@ const useStyles = makeStyles((theme) => ({
     width: 'auto'
   },
   section: {
-    margin: 30,
+    margin: 20,
     height: 540
   }
 }))
 
 export default function Home () {
   const classes = useStyles()
-  const { data } = useSelector(state => state.productsReducer)
   const dispatch = useDispatch()
+  const { data } = useSelector(state => state.productsReducer)
   useEffect(() => {
     dispatch(fetchProducts())
   }, [])
@@ -44,11 +47,10 @@ export default function Home () {
     <div>
       <Container>
         <div className={classes.section} style={{marginTop: 100}}>
-          <Typography variant="h4" style={{marginBottom: 10}}>Product Categories</Typography>
+          
           <Category/>
         </div>
         <div className={classes.section}>
-        <Typography variant="h4">All Products</Typography>
           <ImageContainer data={data} />
         </div>
       </Container>

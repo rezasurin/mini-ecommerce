@@ -10,7 +10,6 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#202932',
     padding: theme.spacing(2)
   },
   gridList: {
@@ -19,12 +18,17 @@ const useStyles = makeStyles((theme) => ({
 
   },
   card: {
-    maxWidth: 420,
-    margin: 5
+    maxWidth: 140,
+    margin: 20,
+    '&:hover' : {
+      border: '1px solid #4054B5',
+      transform: 'scale(1, 1.1)',
+      transition: '.3s ease-in'
+    }
   },
   media: {
-    maxHeight: '180px',
-    width: 'auto'
+    maxHeight: '160px',
+    width: '200'
   }
 }))
 
@@ -33,12 +37,13 @@ export default function ProductCategory() {
 
   return (
     <div className={classes.root}>
-      <Grid justify="center">
-        <Grid container item lg={12} style={{backgroundColor: 'black', flexWrap: 'wrap', justifyContent: 'center'}}>
+      <Typography variant="h4" style={{marginBottom: 10, borderBottom: '2px solid #4054B5', width: 40, marginLeft: 60}}>Product Categories</Typography>
+      <Grid container justify="center">
+        <Grid container item lg={12} style={{ flexWrap: 'wrap', justifyContent: 'center', flex:1}}>
             {
-              ['baju', 'aksesoris', 'celana', 'elektronik', 'perhiasan', 'makanan'].map(title => (
+              ['baju', 'aksesoris', 'celana', 'elektronik', 'laptop', 'makanan'].map(title => (
 
-              <Card className={classes.card}>
+              <Card className={classes.card} raised={true}>
                 <CardActionArea>
                   <CardMedia
                   className={classes.media}
@@ -47,7 +52,7 @@ export default function ProductCategory() {
                   title="baju"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom variant="h6" component="h2">
                       {title}
                     </Typography>
                   </CardContent>
